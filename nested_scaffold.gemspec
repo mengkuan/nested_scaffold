@@ -43,7 +43,7 @@ Gem::Specification.new do |s|
     "lib/generators/nested_scaffold_generator.rb",
     "lib/generators/scaffold_controller/scaffold_controller_generator.rb",
     "lib/generators/scaffold_controller/templates/controller.rb",
-    "lib/generators/stylesheets/stylesheets_generator.rb",
+    "lib/generators/assets/assets_generator.rb",
     "lib/generators/test_unit/helper_generator.rb",
     "lib/generators/test_unit/model_generator.rb",
     "lib/generators/test_unit/scaffold_generator.rb",
