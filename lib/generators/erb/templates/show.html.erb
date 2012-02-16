@@ -1,12 +1,11 @@
-<p id="notice"><%%= notice %></p>
+<%%= semantic_attributes_for @<%= singular_name %> do |attr| %>
+  <%%= attr.attributes do %>
+  <%- attributes.each do |attribute| -%>
+    <%%= attr.attribute :<%= attribute.name %> %>
+  <%- end -%>
+  <%% end %>
+<%% end %>
 
-<% for attribute in attributes -%>
-<p>
-  <b><%= attribute.human_name %>:</b>
-  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
-</p>
+<%%= link_to 'Edit', edit_<%= nested_parent_name %>_<%= singular_table_name %>_path(@<%= singular_table_name %>.<%= nested_parent_name %>, @<%= singular_table_name %>), :class => 'btn btn-primary' %>
+| <%%= link_to 'Back', <%= nested_parent_name %>_<%= plural_table_name %>_path %>
 
-<% end -%>
-
-<%%= link_to 'Edit', edit_<%= nested_parent_name %>_<%= singular_table_name %>_path(@<%= singular_table_name %>.<%= nested_parent_name %>, @<%= singular_table_name %>) %> |
-<%%= link_to 'Back', <%= nested_parent_name %>_<%= index_helper %>_path(@<%= singular_table_name %>.<%= nested_parent_name %>) %>

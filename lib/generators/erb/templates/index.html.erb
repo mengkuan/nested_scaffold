@@ -1,8 +1,6 @@
-<h1>Listing <%= plural_table_name %></h1>
-
-<table>
+<table class="table table-striped">
   <tr>
-<% for attribute in attributes -%>
+<% attributes.each do |attribute| -%>
     <th><%= attribute.human_name %></th>
 <% end -%>
     <th></th>
@@ -12,7 +10,7 @@
 
 <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
   <tr>
-<% for attribute in attributes -%>
+<% attributes.each do |attribute| -%>
     <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
 <% end -%>
     <td><%%= link_to 'Show', [<%= singular_table_name %>.<%= nested_parent_name %>, <%= singular_table_name %>] %></td>
@@ -24,4 +22,4 @@
 
 <br />
 
-<%%= link_to 'New <%= human_name %>', new_<%= nested_parent_name %>_<%= singular_table_name %>_path(params[:<%= nested_parent_name %>_id]) %>
+<%%= link_to 'New <%= human_name %>', new_<%= nested_parent_name %>_<%= singular_table_name %>_path(params[:<%= nested_parent_name %>_id]), :class => 'btn btn-primary' %>
